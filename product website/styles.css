@@ -1,0 +1,400 @@
+body {
+    margin: 0px;
+    background-image: url("1cccf7a9a4545373ebe275987784c289.jpg");
+    background-size: contain;
+}
+
+.logo img {
+    width: 50px;
+    height: 50px;
+    transition: all 0.2s ease;
+    padding-left: 20px;
+}
+
+.logo img:hover {
+    scale: 1.2;
+    cursor: default;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    margin: 0;
+    padding: 10px;
+    background-color: rgb(163, 255, 172);
+    width: 100%;
+
+}
+
+nav div {
+    list-style: none;
+    display: flex;
+    gap: 6px;
+}
+
+.menu {
+    padding-right: 100px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: rgb(6, 24, 0);
+    font-weight: bold;
+    padding: 10px 10px;
+    border-radius: 10px;
+    transition: all 0.6s ease;
+}
+
+.menu a:hover {
+    color: rgb(0, 255, 85);
+    background: rgb(255, 255, 255);
+    scale: 1.2;
+}
+
+section.home {
+    background: url("gb1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 600px;
+}
+
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('bg-image.jpg');
+    /* ganti kalau mau gambar */
+    background-size: cover;
+    text-align: center;
+    flex-direction: column;
+}
+
+.home-content h1 {
+    font-size: 60px;
+    font-family: 'Pacifico', cursive;
+    color: #39000b;
+    margin-bottom: 20px;
+}
+
+.home-content p {
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.buy-button {
+    padding: 12px 30px;
+    background-color: white;
+    color: #e75480;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    border: 2px solid #e75480;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.buy-button:hover {
+    background-color: #e75480;
+    color: white;
+}
+
+
+section.location {
+    background: url("bluryy.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 600px;
+    scroll-margin-top: 60px;
+    scroll-margin-bottom: 0px;
+}
+
+.card {
+    width: 210px;
+    margin: 10px;
+    height: 300px;
+    box-shadow: 0 0 2px;
+    padding: 10px;
+    text-align: center;
+    background-color: rgb(255, 229, 182);
+    box-shadow: black;
+    border-radius: 10px;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: grab;
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+    width: 80%;
+    border-radius: 50px;
+}
+
+.product {
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.produk-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding-top: 20px;
+}
+
+h1 {
+    font-family: "Sofia", sans-serif;
+    color: rgb(0, 135, 52);
+
+}
+
+.deskripsi h4 {
+    position: relative;
+    top: -20px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow:
+        0 0 5px #ff00ff,
+        0 0 10px #ff00ff,
+        0 0 20px, #ff66ff,
+        0 0 30px, #ff66ff,
+        0 0 40px, #ff66ff;
+}
+
+.glow-text {
+    color: #ff00ff;
+    font-weight: bold;
+    text-shadow:
+        0 0 5px #ff00ff,
+        0 0 10px #ff00ff,
+        0 0 20px #ff66ff,
+        0 0 30px #ff66ff,
+        0 0 40px #ff66ff;
+}
+
+.outlet-title-text {
+    font-family: 'Pacifico', cursive;
+    font-size: 20px;
+    color: #e75480;
+    background-color: rgba(255, 255, 255, 0.87);
+    padding: 10px 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin: 50px auto 20px auto;
+    width: fit-content;
+}
+
+.outlet h2 {
+    font-family: 'Pacifico', cursive;
+}
+
+.maps-button {
+    background-color: darkgreen;
+    border-radius: 15px;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+section.about {
+    background-color: rgb(255, 147, 147);
+    height: 600px;
+    align-items: center;
+    scroll-margin-top: 95px;
+    scroll-margin-bottom: 0px;
+}
+
+.deskripsia {
+    color: aliceblue;
+    margin-bottom: 100px;
+    text-shadow: 3px 3px 3px #ababab;
+}
+
+.cafeimg {
+    padding-top: -10px;
+    padding-right: 400px;
+    padding-left: 536px;
+}
+
+.elegant-text {
+    font-family: 'Playfair Display', serif;
+    color: white;
+    font-size: 18px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    line-height: 1.6;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+section.product {
+    background: url("bluryy.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 700px;
+    scroll-margin-top: 95px;
+    scroll-margin-bottom: 0px;
+    padding: 50px 20px;
+    background-color: #fff0f5;
+    text-align: center;
+}
+
+
+.product-title {
+    font-family: 'Pacifico', cursive;
+    color: #e75480;
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+
+.product {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.product-section {
+    padding: 50px 20px;
+    background-color: #fff0f5;
+    text-align: center;
+}
+
+
+.product-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    justify-items: center;
+}
+
+.product-card {
+    margin: 10px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+    height: 230px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    text-align: center;
+    align-items: center;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+}
+
+.product-card .gambar {
+    width: 100%;
+    border-radius: 10px;
+
+}
+
+.product-card:hover .gambar img {
+    scale: 1.2;
+    filter: opacity(10%);
+    transition: 0.5s;
+}
+
+.product-card .gambar img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.product-card .deskripsi {
+    position: absolute;
+    top: 210px;
+    padding: 0px 10px;
+    transition: 0.5s;
+}
+
+.product-card:hover .deskripsi {
+    top: 0px;
+    transition: 0.5s;
+}
+
+.product-card .deskripsi a {
+    text-decoration: none;
+    background-color: #e75480;
+    color: #fff;
+    padding: 5px 10px;
+}
+
+.product-card .deskripsi a:hover {
+    background-color: #b79fa6;
+}
+
+
+
+section.contact {
+    background-color: rgb(200, 253, 208);
+    height: 600px;
+}
+
+.top {
+    text-decoration: none;
+}
+
+footer {
+    background-color: rgb(4, 53, 19);
+    height: 50px;
+}
+
+h2 {
+    font-family: "Audiowide", sans-serif;
+    text-align: center;
+}
+
+h3.c {
+    font-family: "Trirong", serif;
+    text-align: center;
+    margin: 8 8;
+    text-shadow: black;
+}
+
+
+
+.Paris h2 {
+    padding-top: 10px;
+    color: #ffffff;
+    text-shadow:
+        0 0 5px #ffffff,
+        0 0 10px #ffffff,
+        0 0 20px, #ffffff,
+        0 0 30px, #ffffff,
+        0 0 40px, #ffffff;
+}
+
+.outlet {
+    padding-top: 2px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
