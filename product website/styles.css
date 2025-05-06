@@ -59,7 +59,15 @@ section.home {
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    height: 600px;
+    height: 630px;
+}
+
+.home-content img{
+    border-radius:30px;
+}
+
+.home-content h1{
+    padding-top:30px;
 }
 
 .home {
@@ -67,8 +75,6 @@ section.home {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url('bg-image.jpg');
-    /* ganti kalau mau gambar */
     background-size: cover;
     text-align: center;
     flex-direction: column;
@@ -152,7 +158,7 @@ section.location {
     flex-wrap: wrap;
 }
 
-.produk-container {
+.container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -221,10 +227,16 @@ h1 {
 
 section.about {
     background-color: rgb(255, 147, 147);
-    height: 600px;
+    height: 650px;
     align-items: center;
     scroll-margin-top: 95px;
     scroll-margin-bottom: 0px;
+    font-family: 'Quicksand', sans-serif;
+
+}
+
+.outlet {
+    padding-top: 2px;
 }
 
 .deskripsia {
@@ -239,15 +251,66 @@ section.about {
     padding-left: 536px;
 }
 
-.elegant-text {
-    font-family: 'Playfair Display', serif;
-    color: white;
-    font-size: 18px;
+.typing-text {
+    overflow: hidden;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    white-space: nowrap;
+    border-right: 3px solid #fff;
+    width: 0;
+    font-family: 'Playfair Display', serif;
+    font-size: 15px;
+    color: white;
+    animation: typing 4s steps(30, end) forwards, blink 0.75s step-end infinite;
     text-align: center;
     line-height: 1.6;
     padding-left: 5px;
     padding-right: 5px;
+}
+
+@keyframes typing {
+    from {
+        width: 0
+    }
+
+    to {
+        width: 100%
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent
+    }
+}
+
+.cafeimg {
+    padding-top: 10px;
+    display: flex;
+    padding-left: 560px;
+    transition: all .2s ease-in;
+}
+
+
+.cafeimg:hover {
+    opacity: 0.7;
+    scale: 110%;
+    transform: translateY(-5px);
+}
+
+.paris-banner {
+    background-color: white;
+    padding: 10px 0;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.paris-text {
+    font-family: 'Dancing Script', cursive;
+    font-size: 30px;
+    color: #420021;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 section.product {
@@ -255,7 +318,7 @@ section.product {
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    height: 700px;
+    height: 900px;
     scroll-margin-top: 95px;
     scroll-margin-bottom: 0px;
     padding: 50px 20px;
@@ -263,19 +326,76 @@ section.product {
     text-align: center;
 }
 
+.cart-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #fff;
+    padding: 10px 15px;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+}
+
+.cart-box {
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    background: white;
+    width: 300px;
+    padding: 15px;
+    border: 2px solid pink;
+    border-radius: 10px;
+    display: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 999;
+}
+
+#cart-toggle:checked~.cart-box {
+    display: block;
+}
+
+
+button {
+    padding: 10px 20px;
+    background-color: #ff69b4;
+    color: white;
+    border: none;
+    border-radius: 10px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+#popup-checkout:checked+.popup {
+    display: flex;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
 
 .product-title {
     font-family: 'Pacifico', cursive;
     color: #e75480;
     font-size: 32px;
     margin-bottom: 30px;
-}
-
-
-.product {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
 }
 
 .product-section {
@@ -294,12 +414,12 @@ section.product {
 
 .product-card {
     margin: 10px;
-    background-color: #fff;
+    background-color: #ff5f7da1;
     border-radius: 15px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     padding: 20px;
     width: 300px;
-    height: 230px;
+    height: 270px;
     overflow: hidden;
     transition: transform 0.3s ease;
     text-align: center;
@@ -313,6 +433,7 @@ section.product {
 .product-card .gambar {
     width: 100%;
     border-radius: 10px;
+    height: 30px;
 
 }
 
@@ -328,10 +449,11 @@ section.product {
 }
 
 .product-card .deskripsi {
-    position: absolute;
+    position: relative;
     top: 210px;
     padding: 0px 10px;
     transition: 0.5s;
+    bottom: -10px;
 }
 
 .product-card:hover .deskripsi {
@@ -341,8 +463,8 @@ section.product {
 
 .product-card .deskripsi a {
     text-decoration: none;
-    background-color: #e75480;
-    color: #fff;
+    background-color: #ffffff;
+    color: #ff6464;
     padding: 5px 10px;
 }
 
@@ -350,11 +472,204 @@ section.product {
     background-color: #b79fa6;
 }
 
+.product-card h3 {
+    font-family: 'Poppins', sans-serif;
+    color: #460b0b;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
 
+.product-card p {
+    color: #fef6e4;
+}
 
 section.contact {
     background-color: rgb(200, 253, 208);
-    height: 600px;
+    height: 400px;
+    scroll-margin-top: 70px;
+    scroll-margin-bottom: 0px;
+
+}
+
+.click-here {
+    background-color: pink;
+    color: black;
+    padding: 6px 12px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: underline;
+    font-family: 'Poppins', sans-serif;
+}
+
+.popup-form {
+    display: none;
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -20%);
+    background: #fff;
+    border: 2px solid #ddd;
+    padding: 20px;
+    z-index: 9999;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    width: 300px;
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.popup-form input,
+.popup-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.popup-form button {
+    margin-top: 15px;
+    padding: 10px;
+    width: 100%;
+    background-color: #f04d8d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.popup-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #f04d8d;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9998;
+}
+
+.contact .khusus a {
+    text-decoration: none;
+    background-color: #ffffff;
+    color: #ff6464;
+    padding: 5px 10px;
+}
+
+.contact .khusus a:hover {
+    background-color: #b79fa6;
+}
+
+.contact-text h2 {
+    font-family: 'Pacifico', cursive;
+}
+
+.contact-section {
+    background: linear-gradient(to bottom right, #f8f0e3, #ffeaea);
+    padding: 60px 20px;
+    animation: fadeInUp 1.2s ease-out;
+}
+
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.contact-text {
+    flex: 1;
+    min-width: 300px;
+    padding: 20px;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.contact-text h2 {
+    color: #ff6b81;
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.contact-text p {
+    font-size: 1.1em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.contact-text ul {
+    list-style: none;
+    padding: 0;
+    font-size: 1em;
+    color: #444;
+}
+
+.contact-text li {
+    margin-bottom: 10px;
+}
+
+.contact-image {
+    flex: 1;
+    min-width: 300px;
+    text-align: center;
+}
+
+.contact-image img {
+    padding-top: 50px;
+    max-width: 50%;
+    height: auto;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+section.titlecon {
+    scroll-margin-top: 95px;
+    scroll-margin-bottom: 0px;
+}
+
+.contact-title-text {
+    font-family: 'Pacifico', cursive;
+    font-size: 20px;
+    color: #06521f;
+    background-color: rgb(255, 255, 255);
+    padding: 10px 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.849);
+    text-align: center;
+    margin: 50px auto 20px auto;
+    width: fit-content;
 }
 
 .top {
@@ -363,7 +678,44 @@ section.contact {
 
 footer {
     background-color: rgb(4, 53, 19);
-    height: 50px;
+    height: 60px;
+    text-align: center;
+}
+
+.sosmed a {
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    margin: 0 5px;
+}
+
+.sosmed .fa {
+    padding: 10px 12px;
+    font-size: 20px;
+    width: 40px;
+    line-height: 40px;
+    color: white;
+    transition: all .2s ease-in;
+}
+
+.sosmed .fa:hover {
+    opacity: 0.7;
+    scale: 110%;
+    transform: translateY(-5px);
+}
+
+.sosmed .fa-instagram {
+    background-image: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #d62976, #4f5bd5);
+}
+
+.sosmed .fa-whatsapp {
+    background-color: #25D366;
+    color: white;
+}
+
+.sosmed .fa-twitter {
+    background-color: rgb(0, 196, 221);
+    color: white;
 }
 
 h2 {
@@ -380,19 +732,36 @@ h3.c {
 
 
 
-.Paris h2 {
-    padding-top: 10px;
-    color: #ffffff;
-    text-shadow:
-        0 0 5px #ffffff,
-        0 0 10px #ffffff,
-        0 0 20px, #ffffff,
-        0 0 30px, #ffffff,
-        0 0 40px, #ffffff;
+.floating-audio {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-.outlet {
-    padding-top: 2px;
+.vinyl {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    animation: spin 5s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+audio {
+    width: 140px;
+    height: 30px;
 }
 
 html {
